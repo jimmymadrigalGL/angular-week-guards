@@ -1,0 +1,21 @@
+<section class="mat-typography">
+  <h1>Guards</h1>
+  <h3>A way to protect routes</h3>
+  <mat-list class="steps">
+    <mat-list-item role="listitem"><i class="fas fa-play fa-xs" ></i> CanActivate <small>To restrict access or check prerequisites</small></mat-list-item>
+    <mat-list-item role="listitem"><i class="fas fa-play fa-xs" ></i> CanActivateChild <small>Same but for all the children</small></mat-list-item>
+    <mat-list-item role="listitem"><i class="fas fa-play fa-xs" ></i> CanDeactivate <small>Prevent leaving with incomplete data</small></mat-list-item>
+    <mat-list-item role="listitem"><i class="fas fa-play fa-xs" ></i> CanLoad <small>Prevent load restricted lazy loading module</small></mat-list-item>
+    <mat-list-item role="listitem"><i class="fas fa-play fa-xs" ></i> Resolve <small>Load data before navigating</small></mat-list-item>
+  </mat-list>
+  <br>
+  <br>
+  <h3>Executed in this order. Lets say you are navigating from <u>/home</u> to <u>/outside/shop</u></h3>
+  <mat-list class="steps">
+    <mat-list-item role="listitem">1. CanDeactivate<small>when leaving /home route</small></mat-list-item>
+    <mat-list-item role="listitem">2. CanLoad<small>before loading lazy module</small></mat-list-item>
+    <mat-list-item role="listitem">3. CanActivateChild<small>in parent /outside route</small></mat-list-item>
+    <mat-list-item role="listitem">4. CanActivate<small>in /outside/shop child route</small></mat-list-item>
+    <mat-list-item role="listitem">5. Resolve<small>in /outside/shop child route</small></mat-list-item>
+  </mat-list>
+</section>

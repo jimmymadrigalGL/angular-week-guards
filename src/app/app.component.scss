@@ -1,0 +1,34 @@
+.title {
+  margin-left: 13px;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-sidenav-container{
+  height: 100%;
+}
+
+.main-container {
+  height: 100%;
+  padding: 55px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+mat-toolbar {
+  button {
+    margin-left: 8px;
+    i.fas {
+      color: white;
+    }
+  }
+}
+mat-sidenav .mat-drawer-inner-container {
+  padding-bottom: 100px;
+}
+
+.profile {
+  margin-top: 34px;
+
+}

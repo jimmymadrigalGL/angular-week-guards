@@ -1,0 +1,22 @@
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+  min-height: 100%;
+}
+
+.steps {
+  mat-list-item {
+    i.fa-xs {
+      margin-right: 5px;
+    }
+    small {
+      margin-left: 13px;
+    }
+  }
+}

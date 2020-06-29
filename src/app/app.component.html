@@ -1,0 +1,28 @@
+<mat-toolbar  color="primary" >
+  <button mat-icon-button aria-label="Expand" (click)="toggleExpanded()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="title"> <i class="fas fa-virus"></i> Corona guards</span>
+  <span class="spacer"></span>
+  <button mat-mini-fab [color]="stateService.state.maskOn?'warn':'basic'" aria-label="Mask" (click)="toggleMaskOn()">
+    <i class="fas fa-head-side-mask fa-2x"></i>
+  </button>
+  <button mat-mini-fab [color]="stateService.state.handsWashed?'warn':'basic'" aria-label="Wash hands" (click)="toggleHandsWashed()">
+    <i class="fas fa-hands-wash fa-2x"></i>
+  </button>
+  <button mat-raised-button (click)="clear()"><i class="fas fa-eraser fa-2x"></i></button>
+</mat-toolbar>
+<mat-sidenav-container autosize>
+	<mat-sidenav #sidenav mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+    <app-menu [isExpanded]="isExpanded || isShowing"></app-menu>
+    <mat-chip-list  class="profile mat-chip-list-stacked">
+      <mat-chip color="primary" selected>Age {{ stateService.state.profileAge }}</mat-chip>
+      <mat-chip color="primary" selected>Car {{ stateService.state.carPlate }}</mat-chip>
+    </mat-chip-list>
+	</mat-sidenav>
+
+	<div class="main-container">
+		<router-outlet></router-outlet>
+	</div>
+
+</mat-sidenav-container>

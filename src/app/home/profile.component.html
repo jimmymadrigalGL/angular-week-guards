@@ -1,0 +1,20 @@
+<h1>Profile</h1>
+<h3>Select your age and the last digit of you car's plate</h3>
+<form>
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your age</mat-label>
+    <input matInput placeholder="Age" type="number" min="1" max="200" autocomplete="off" [value]="stateService.state.profileAge" (change)="setAge($event.target.value)">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Plate last digit</mat-label>
+    <mat-select [value]="stateService.state.carPlate" (selectionChange)="setPlate($event.value)">
+      <mat-option *ngFor="let plate of [1,2,3,4,5,6,7,8,9]" [value]="plate">
+        {{plate}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div *ngIf="stateService.redirectUrl">
+    <button mat-raised-button color="primary" (click)="continue()">Continue</button>
+  </div>
+</form>

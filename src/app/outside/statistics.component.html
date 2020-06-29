@@ -1,0 +1,16 @@
+
+<div>
+  <button mat-raised-button color="primary" routerLink="/outside/stats">Back</button>
+</div>
+<h2>Stats by country</h2>
+<h3><b>Country: </b> {{ stats?.Country }}</h3>
+<P><b>Confirmed: </b> {{ stats?.Confirmed }}</P>
+<P><b>Deaths: </b> {{ stats?.Deaths }}</P>
+<P><b>Recovered: </b> {{ stats?.Recovered }}</P>
+<P><b>Active: </b> {{ stats?.Active }}</P>
+
+<div>
+  <button mat-raised-button [color]="stats?.Country === 'Costa Rica'? 'primary' : 'accent'" (click)="change('costa-rica')">Costa Rica</button>
+  <button mat-raised-button [color]="stats?.Country === 'Nicaragua'? 'primary' : 'accent'" (click)="change('nicaragua')">Nicaragua</button>
+  <button mat-raised-button [color]="stats?.Country === 'United States of America'? 'primary' : 'accent'" (click)="change('united-states')">United States of America</button>
+</div>

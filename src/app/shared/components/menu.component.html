@@ -1,0 +1,16 @@
+<mat-nav-list>
+  <mat-list-item routerLink="/overview"><i class="fas fa-book-open"></i><span *ngIf="isExpanded">Overview</span></mat-list-item>
+  <div class="submenu">
+    <mat-list-item routerLink="/overview/routing"><i class="fas fa-share-alt"></i><span *ngIf="isExpanded">Routing</span></mat-list-item>
+    <mat-list-item routerLink="/overview/lazy-loading"><i class="fas fa-stopwatch"></i><span *ngIf="isExpanded">Lazy Loading</span></mat-list-item>
+    <mat-list-item routerLink="/overview/guards"><i class="fas fa-shield-alt"></i><span *ngIf="isExpanded">Guards</span></mat-list-item>
+  </div>
+  <mat-divider></mat-divider>
+  <mat-list-item routerLink="/home"><i class="fas fa-home"></i><span *ngIf="isExpanded">Home</span></mat-list-item>
+  <mat-list-item routerLink="/outside"><i class="fas fa-globe-americas"></i><span *ngIf="isExpanded">Go Outside&nbsp;<i class="fas fa-stopwatch fa-xs"></i></span></mat-list-item>
+  <div class="submenu">
+    <mat-list-item routerLink="/outside/car"><i class="fas fa-car"></i><span *ngIf="isExpanded">Car</span></mat-list-item>
+    <mat-list-item routerLink="/outside/shop"><i class="fas fa-shopping-cart"></i><span *ngIf="isExpanded">Shop</span></mat-list-item>
+    <mat-list-item routerLink="/outside/stats"><i class="fas fa-chart-line"></i><span *ngIf="isExpanded">Stats</span></mat-list-item>
+  </div>
+</mat-nav-list>
