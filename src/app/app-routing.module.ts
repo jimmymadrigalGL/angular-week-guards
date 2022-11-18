@@ -19,7 +19,7 @@ const routes: Routes = [
     path: 'outside',
     loadChildren: () =>
       import('./outside/outside.module').then((m) => m.OutsideModule),
-    /* Uncomment to test* /  canLoad: [MaskGuard],*/
+    /* Uncomment to test* / canLoad: [MaskGuard],*/
   },
   {
     path: 'add/:product',

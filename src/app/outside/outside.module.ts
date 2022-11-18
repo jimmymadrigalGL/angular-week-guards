@@ -12,7 +12,6 @@ import { SharedModule } from '../shared/shared.module';
 import { StatisticsMenuComponent } from './statistics-menu.component';
 import { ShopComponent } from './shop.component';
 
-
 @NgModule({
   declarations: [
     OutsideComponent,
@@ -22,11 +21,9 @@ import { ShopComponent } from './shop.component';
     StatisticsServiceComponent,
     StatisticsResolverComponent,
     StatisticsResolverObservableComponent,
-    StatisticsMenuComponent ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    OutsideRoutingModule
-  ]
+    StatisticsMenuComponent,
+  ],
+  imports: [CommonModule, SharedModule, OutsideRoutingModule],
 })
-export class OutsideModule { }
+export class OutsideModule {}
+console.log('Outside module loaded');
