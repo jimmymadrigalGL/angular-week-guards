@@ -15,36 +15,42 @@ import { PlateGuard } from '../shared/shared.module';
 import { AgeGuard } from '../shared/shared.module';
 import { ShopGuard } from './services/shop.guard';
 
-
-
 const routes: Routes = [
-  { path: '',
-    /* Uncomment to test*/ canActivate: [MaskGuard], // can turn off mask and navigate between children
-    /* Uncomment to test*/ canActivateChild: [MaskGuard], // cannot do that
+  {
+    path: '',
+    /* Uncomment to test* / canActivate: [MaskGuard],*/ // can turn off mask and navigate between children
+    /* Uncomment to test* / canActivateChild: [MaskGuard],*/ // cannot do that
     children: [
       { path: '', redirectTo: 'car', pathMatch: 'full' },
-      { path: 'car', component: CarComponent,
-        /* Uncomment to test*/  canActivate: [PlateGuard]
+      {
+        path: 'car',
+        component: CarComponent,
+        /* Uncomment to test* /  canActivate: [PlateGuard]*/
       },
-      { path: 'shop', component: ShopComponent,
-        /* Uncomment to test*/  canActivate: [HandsGuard],
-         /* Uncomment to test*/  canDeactivate: [ShopGuard],
+      {
+        path: 'shop',
+        component: ShopComponent,
+        /* Uncomment to test* /  canActivate: [HandsGuard],*/
+        /* Uncomment to test* /  canDeactivate: [ShopGuard],*/
       },
       { path: 'stats', component: StatisticsMenuComponent },
       { path: 'stats/service/:country', component: StatisticsServiceComponent },
-      { path: 'stats/resolver/:country', component: StatisticsResolverComponent,
-        resolve: { stats: StatsGuard }
+      {
+        path: 'stats/resolver/:country',
+        component: StatisticsResolverComponent,
+        resolve: { stats: StatsGuard },
       },
-      { path: 'stats/resolver-observable/:country', component: StatisticsResolverObservableComponent,
-        resolve: { stats: StatsGuard }
+      {
+        path: 'stats/resolver-observable/:country',
+        component: StatisticsResolverObservableComponent,
+        resolve: { stats: StatsGuard },
       },
-    ]
-  }
+    ],
+  },
 ];
-
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class OutsideRoutingModule { }
+export class OutsideRoutingModule {}
